@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## My Deployment Process
+I am deploying to Github pages via the angular-cli-ghpages tool.
+
+To deploy new changes to the Githug pages site, run the command
+
+`ng deploy --base-href=/freediving-training/ --repo=https://github.com/mdemichele/freediving-training.git`
