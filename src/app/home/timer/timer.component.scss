@@ -1,0 +1,33 @@
+.timer-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-main-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.timer-button-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.timer-button-row:nth-child(1) {
+    margin-left: 5%;
+}
+
+
+.timer-message-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

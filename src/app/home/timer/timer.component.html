@@ -1,9 +1,14 @@
 <div class="timer-container">
-    <div class="timer">
-        {{ currentTime }}
+    <div class="timer-main-row">
+        {{ currentTime }}s
     </div>
 
-    <button (click)="handleTimer()">{{ timerButton }}</button>
-    <button (click)="resetTimerValues()">Reset Timer</button>
-    <p class="timer-message">{{ timerMessage }}</p>
+    <div class="timer-button-row">
+        <button class="timer-button" (click)="handleTimer()">{{ timerButton }}</button>
+        <button class="timer-button" (click)="resetTimerValues()">Reset Timer</button>
+    </div>
+
+    <div class="timer-message-row">
+        <p class="timer-message">{{ timerMessage }}</p>
+    </div>
 </div>
