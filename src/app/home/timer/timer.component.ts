@@ -35,7 +35,7 @@ export class TimerComponent {
       this.intervalId = setInterval(() => {
         this.currentTime = this.decrementOneSecond(this.currentTime);
   
-        if (this.currentTime == 0) {
+        if (this.currentTime <= 0) {
           clearInterval(this.intervalId);
           this.timerMessage = 'Timer done.'
         }
@@ -54,6 +54,10 @@ export class TimerComponent {
   }
 
   public resetTimerValues(): void {
+    if (this.timerStarted = true) {
+      clearInterval(this.intervalId);
+    }
+    
     this.timerStarted = false;
     this.timerMessage = 'Timer not started';
     this.timerButton = 'Start Timer';

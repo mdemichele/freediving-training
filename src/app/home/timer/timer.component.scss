@@ -3,14 +3,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .timer-main-row {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 5%;
+    align-items: center;
+}
+
+.timer-display {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    font-size: 100px;
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 .timer-button-row {
@@ -18,7 +31,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
+
+    .timer-button {
+        padding: 10px 30px;
+        background: none;
+        border: 1px solid black;
+    }
+
+    .timer-button:nth-child(2) {
+        margin-left: 10px;
+    }
+
+    .timer-button:hover {
+        cursor: pointer;
+        background: black;
+        color: white;
+    }
 }
 
 .timer-button-row:nth-child(1) {
