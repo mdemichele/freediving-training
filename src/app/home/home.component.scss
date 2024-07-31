@@ -20,13 +20,47 @@
     height: 100%;
 }
 
+/* Body Section */
+.body-container {
+    display: flex;
+    justify-content: center;
+    padding: 2% 5%;
+}
+
+/* Form */
+.table-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .form-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-control-row {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
 
 /* Timer Section */
 .timer-container {
-    width: 100%;
     display: flex;
     justify-content: center;
     height: 80%;
+    width: 60%;
+}
+
+.tables-container {
+    width: 40%;
 }
 
 app-timer {

@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-timer',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent {
-  public initialTime: number = 60;
+  @Input() initialTime: number = 60;
+  @Input() carbonCurrentTable: any = [];
+  @Input() oxygenCurrentTable: any = [];
   public currentTime: number = 0;
   public timerMessage: string = 'Timer not started';
   public timerButton: string = 'Start Timer';
   public timerStarted: boolean = false;
   public intervalId: any;
+
+  public timerForm = new FormGroup({
+    timerType: new FormControl('carbon')
+  });
 
   constructor() {
 
@@ -21,7 +28,6 @@ export class TimerComponent {
 
   ngOnInit() {
     this.currentTime = this.initialTime;
-
   }
 
   public decrementOneSecond(currentTime: number): number {
@@ -37,6 +43,7 @@ export class TimerComponent {
   
         if (this.currentTime <= 0) {
           clearInterval(this.intervalId);
+          this.playEndTimerSound();
           this.timerMessage = 'Timer done.'
         }
       }, 1000);
@@ -62,5 +69,16 @@ export class TimerComponent {
     this.timerMessage = 'Timer not started';
     this.timerButton = 'Start Timer';
     this.currentTime = this.initialTime;
+  }
+
+  public playEndTimerSound(): void {
+    const audio = new Audio('assets/sounds/end-timer.wav');
+    audio.play();
+  }
+
+  public handleChooseTimerType(event: any) {
+    event.preventDefault();
+    console.log(event);
+    console.log(this.timerForm);
   }
 }

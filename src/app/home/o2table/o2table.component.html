@@ -1,0 +1,15 @@
+<div class="o2table-container">
+    <div class="table-header">
+        <h3>O2 Table</h3>
+    </div>
+    @for (interval of table; track interval.id) {
+        <div class="table-row">
+            <div class="apnea-column">
+                apea: {{ interval.apnea }}
+            </div>
+            <div class="rest-column">
+                rest: {{ interval.rest }}
+            </div>
+        </div>
+    }
+</div>

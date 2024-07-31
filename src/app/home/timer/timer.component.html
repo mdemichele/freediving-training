@@ -6,6 +6,13 @@
     <div class="timer-button-row">
         <button class="timer-button" (click)="handleTimer()">{{ timerButton }}</button>
         <button class="timer-button" (click)="resetTimerValues()">Reset Timer</button>
+        <form class="timer-type-form" [formGroup]="timerForm" (ngSubmit)="handleChooseTimerType($event)">
+            <select formControlName="timerType" name="choose-timer">
+                <option value="oxygen">O2 Table</option>
+                <option value="carbon">CO2 Table</option>
+            </select>
+            <button type="submit">Generate</button>
+        </form>
     </div>
 
     <div class="timer-message-row">
