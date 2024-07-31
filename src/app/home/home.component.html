@@ -6,7 +6,142 @@
     </div>
 
 
-    <div class="timer-container">
-        <app-timer></app-timer>
+    <div class="body-container">
+        <div class="timer-container">
+            <app-timer
+                [carbonCurrentTable]="carbonCurrentTable"
+            >
+            </app-timer>
+        </div>
+    
+        <div class="tables-container">
+            <div class="edit-table-container">
+                <h2>Generate CO2 Table</h2>
+                <form class="table-form" [formGroup]="carbonTableForm" (ngSubmit)="submitCO2Form($event)">
+                    <!-- Intervals -->
+                    <div class="form-row">
+                        <label for="intervals">Intervals</label>
+                        <input 
+                            type="number"
+                            id="intervals"
+                            name="intervals"
+                            formControlName="intervals"
+                        >
+                    </div>
+
+                    <!-- Apnea Interval -->
+                    <div class="form-row">
+                        <label form="apnea">Starting Apnea Interval</label>
+                        <input
+                            type="number"
+                            id="apneaInterval"
+                            name="apneaIterval"
+                            formControlName="apneaInterval"
+                        >
+                    </div>
+
+                    <!-- Rest Interval -->
+                    <div class="form-row">
+                        <label form="rest">Starting Rest Interval</label>
+                        <input
+                            type="number"
+                            id="restInterval"
+                            name="restInterval"
+                            formControlName="restInterval"
+                        >
+                    </div>
+
+                    <!-- Decrement Amount -->
+                    <div class="form-row">
+                        <label form="rest">Decrement Amount</label>
+                        <input 
+                            type="number"
+                            id="decrementAmount"
+                            name="decrementAmount"
+                            formControlName="decrementAmount"
+                        >
+                    </div>
+
+                    <div class="form-control-row">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="co2table-container">
+                <app-co2table 
+                    [intervals]="carbonIntervals" 
+                    [apneaInterval]="carbonApneaInterval" 
+                    [restInterval]="carbonRestInterval" 
+                    [decrementAmount]="carbonDecrementAmount"
+                    [table]="carbonCurrentTable"
+                >
+                </app-co2table>
+            </div>
+
+            <div class="edit-table-container">
+                <h2>Generate O2 Table</h2>
+                <form class="table-form" [formGroup]="oxygenTableForm" (ngSubmit)="submitO2Form($event)">
+                    <!-- Intervals -->
+                    <div class="form-row">
+                        <label for="intervals">Intervals</label>
+                        <input 
+                            type="number"
+                            id="intervals"
+                            name="intervals"
+                            formControlName="intervals"
+                        >
+                    </div>
+
+                    <!-- Apnea Interval -->
+                    <div class="form-row">
+                        <label form="apnea">Starting Apnea Interval</label>
+                        <input
+                            type="number"
+                            id="apneaInterval"
+                            name="apneaIterval"
+                            formControlName="apneaInterval"
+                        >
+                    </div>
+
+                    <!-- Rest Interval -->
+                    <div class="form-row">
+                        <label form="rest">Starting Rest Interval</label>
+                        <input
+                            type="number"
+                            id="restInterval"
+                            name="restInterval"
+                            formControlName="restInterval"
+                        >
+                    </div>
+
+                    <!-- Increment Amount -->
+                    <div class="form-row">
+                        <label form="rest">Increment Amount</label>
+                        <input 
+                            type="number"
+                            id="incrementAmount"
+                            name="incrementAmount"
+                            formControlName="incrementAmount"
+                        >
+                    </div>
+
+                    <div class="form-control-row">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="o2table-container">
+                <app-o2table
+                    [intervals]="oxygenIntervals"
+                    [apneaInterval]="oxygenApneaInterval"
+                    [restInterval]="oxygenRestInterval"
+                    [incrementAmount]="oxygenIncrementAmount"
+                    [table]="oxygenCurrentTable"
+                ></app-o2table>
+            </div>
+        </div>
     </div>
+
 </div>
