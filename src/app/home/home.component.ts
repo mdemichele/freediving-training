@@ -3,11 +3,12 @@ import { TimerComponent } from './timer/timer.component';
 import { Co2TableComponent } from "./co2table/co2table.component";
 import { O2TableComponent } from './o2table/o2table.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TimerComponent, Co2TableComponent, O2TableComponent, ReactiveFormsModule],
+  imports: [TimerComponent, HeaderComponent, Co2TableComponent, O2TableComponent, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
